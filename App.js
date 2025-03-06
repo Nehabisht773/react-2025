@@ -1,40 +1,27 @@
-//JS
-const jsHeading = document.createElement("h1");
-jsHeading.innerHTML = "Hello World from JS";
-const rootJS = document.getElementById("root");
-rootJS.appendChild(jsHeading);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-
-//REACT
+//Create react element using React
 const heading = React.createElement(
   "h1",
-  { id: "heading", xyz:"abc" },
-  "Hello World from React!!!!"
+  { id: "heading" },
+  "Namaste React in 2025"
 );
-console.log(heading) //React.createELement just creates an object 
-const root = ReactDOM.createRoot(document.getElementById("reactRoot"));
-root.render(heading); // render takes the object and convert it to h1 tag and put it to root
+console.log(heading);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+//root.render converts the heading createElement oject to HTML object and replaces it in DOM. (Not append )
+ 
+//Create react element using JSX
+const headingJSX = (
+  <h1 id="heading" className="heading" tabIndex={5}>
+    Namaste React using JSX
+  </h1>
+); //This is not HTML using JS. JSX is HTML/XML like syntax.
 
-//Nested 
-{/* <div id="parent">
-    <div id="child">
-        <h1>I am H1 TAG</h1>
-        <h2>I am H2 TAG</h2>
-    </div>
-        <div id="child2">
-        <h1>I am H1 TAG</h1>
-        <h2>I am H2 TAG</h2>
-    </div>
-</div> */
-
-//ReactElement(Object) = HTM   L(Browser Understands)
+const HeadingComponent = () => {
+    return (
+        <h1>Namaste React Heading component</h1>
+    )
 }
-const heading1 = React.createElement("h1", {}, "I am H1 Tag");
-const heading2 = React.createElement("h2", {}, "I am H2 Tag");
-const child = React.createElement("div", {id:"child"}, [heading1, heading2]);
-const child2 = React.createElement("div", {id:"child2"}, [heading1, heading2]);
-const parent = React.createElement("div", {id:"parent"} , [child, child2] );
-
-root.render(parent);
-
-//JSX
+console.log(headingJSX);
