@@ -19,9 +19,13 @@ const headingJSX = (
   </h1>
 ); //This is not HTML using JS. JSX is HTML/XML like syntax.
 
+//react component
 const HeadingComponent = () => {
     return (
         <h1>Namaste React Heading component</h1>
     )
 }
+
+const HeadingComponentSameAsAbove = () =>  <h1>Namaste React Heading component</h1>
 console.log(headingJSX);
+root.render(<HeadingComponent/>)
